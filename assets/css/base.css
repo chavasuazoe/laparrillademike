@@ -1,0 +1,24 @@
+/* Shared design tokens and accessibility primitives. Each screen loads only its own styles. */
+:root {
+  color-scheme: light;
+  --bg: #f3f5f7; --paper: #fff; --card: #fff; --ink: #16242c;
+  --muted: #63717a; --edge: #dce3e8; --stroke: #dce3e8; --line: #dce3e8;
+  --blue: #155da0; --blue-l: #eaf3fc; --blue-bg: #eaf3fc;
+  --green: #117553; --green-l: #e9f7ef; --green-bg: #e9f7ef;
+  --amber: #9b630d; --amber-l: #fff3d7; --orange: #9b630d; --orange-bg: #fff3d7;
+  --red: #b63b45; --red-l: #fff0f0; --red-bg: #fff0f0;
+  --shadow: 0 7px 22px rgba(26,41,51,.055);
+  --radius-sm: 10px; --radius: 14px; --radius-lg: 20px;
+  --tap-min: 44px;
+}
+*, *::before, *::after {box-sizing:border-box}
+html { -webkit-text-size-adjust:100%; }
+body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }
+button,input,select,textarea {font:inherit}
+button {touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer}
+button:disabled {cursor:not-allowed}
+:where(button,a,input,select,textarea):focus-visible {outline:3px solid #77b7eb;outline-offset:2px}
+:where(button,a,input,select,textarea) {max-width:100%}
+[hidden] {display:none!important}
+@media (prefers-reduced-motion:reduce) {*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+.ui-icon { width:1.2em; height:1.2em; flex:0 0 auto; vertical-align:-.15em; color:inherit; stroke:currentColor; }

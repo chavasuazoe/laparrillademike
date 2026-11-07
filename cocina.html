@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#ffffff" name="theme-color"/>
+
+
+<title>Cocina</title>
+
+
+
+<link href="./assets/manifests/kitchen.webmanifest" rel="manifest"/><link href="./assets/icons/icon-192.png" rel="apple-touch-icon"/><link href="./assets/css/base.css?v=10.0.0" rel="stylesheet"/><link href="./assets/css/kitchen.css?v=10.0.0" rel="stylesheet"/></head>
+<body class="ux-cocina">
+<div class="wrap">
+<header aria-label="Barra de cocina" class="top">
+<div class="ux-kitchen-heading"><h1>COCINA</h1><span class="ux-queue-chip" id="count-quick">0 comandas</span></div>
+<div class="meta"><span class="badge warn" id="connection">Conectando</span><button class="btn ux-undo" disabled="" id="undo-done">↶ Comanda</button><button class="btn" id="refresh" aria-label="Actualizar comandas">↻</button><button aria-controls="setup" aria-expanded="false" class="btn" id="config-toggle">Vincular</button></div>
+</header>
+<section aria-label="Vincular cocina con Cloudflare" class="setup" id="setup">
+<h2 class="k-setup-heading">Vincular este dispositivo</h2>
+<p class="muted">Una sola vez: pide al mesero que entre en Ajustes → Conexión Cloudflare → Vincular cocina. Después escribe el código temporal aquí.</p>
+<label>Código de 6 dígitos<input autocomplete="one-time-code" id="pair-code" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" placeholder="000000" class="k-pair-input" type="text"/></label>
+<div class="actions"><button class="btn dark" id="save-config">Vincular cocina</button><button class="btn" id="disconnect">Desvincular dispositivo</button></div>
+<small>GitHub Pages muestra la pantalla; Cloudflare recibe las comandas. No escribas una URL ni una clave privada aquí.</small>
+</section>
+<div class="layout">
+<main aria-live="polite" class="paper" id="ticket"><div class="empty"><h2>Sin comandas</h2><p>Las comandas nuevas de comida aparecerán aquí.</p></div></main>
+
+</div>
+<p aria-live="polite" class="small muted" id="status-message" role="status">Listo.</p>
+</div>
+<footer aria-label="Control de cocina" class="ux-kitchen-footer"><button class="refresh" id="undo-check" disabled>↶ ÚLTIMO</button><button class="finish" disabled="" id="finish">TERMINÉ · SIGUIENTE <span aria-hidden="true">→</span></button></footer>
+
+
+
+<script src="./assets/js/config.js?v=10.0.0"></script><script src="./assets/js/common.js?v=10.0.0"></script><script src="./assets/js/cloudflare.js?v=10.0.0"></script><script src="./assets/js/kitchen.js?v=10.0.0"></script></body></html>
